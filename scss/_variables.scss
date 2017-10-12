@@ -1,0 +1,73 @@
+// Colours
+// =========================
+$red: 					#CC0918;
+$blue:					#0975DE;
+$green:					#7E982D;
+$desert:					#C45E19;
+$orange: 				$desert;
+$yellow:					#FAA21A;
+$bronco:					#650038;
+
+$gray:					#404040;
+$gray-light:			#7D736D;
+$gray-lighter:			#C9C1BC;
+$gray-lightest:		#E8E4E1;
+
+$dark-font:				#989898;
+
+// Colour Palette
+// =========================
+// See _colour.scss
+
+
+// Constants
+// =========================
+$header-height:		13.5rem;
+$card-bg:				transparent;
+
+// Badges
+// =========================
+$badge-default-bg:	$gray;
+$badge-font-size:    130%;
+$badge-font-weight:	300;
+$badge-padding-x:		1.5em;
+$badge-padding-y:		.75em;
+
+// Fonts
+// =========================
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400');
+$font-family-base: 'Roboto Condensed', sans-serif;
+
+$font-size-h1: 		3.5625rem;	// 57px
+$font-size-h2: 		1.8125rem;	// 29px
+$font-size-h3: 		1.625rem; 	// 26px
+$font-size-h4: 		1.5rem; 		// 24px
+
+$lead-font-size:		1.875rem; 	// 30px
+
+$font-weight-normal: 300;
+$font-weight-bold: 	400;
+
+$line-height-base:		1.75;
+
+$link-color:            black;
+$link-decoration:       none;
+$link-hover-color:      lighten($link-color, 15%);
+$link-hover-decoration: none;
+
+// Buttons
+// =========================
+
+// Light button
+$btn-primary-color:		black;
+$btn-primary-bg:			rgba(255, 255, 255, .3);
+
+// Dark button
+$btn-secondary-color:	white;
+$btn-secondary-bg:		rgba(0, 0, 0, .1);
+
+// Overrides
+// =========================
+$enable-rounded: 			false;
+$card-border-width: 		0;
+$modal-lg:              60%;
