@@ -1,0 +1,92 @@
+<table>
+    <tr>
+        <th>Make</th>
+        <td>%asset_metadata_data^json_decode^index:make%</td>
+    </tr>
+    <tr>
+        <th>Model</th>
+        <td>%asset_metadata_data^json_decode^index:model%</td>
+    </tr>
+    <tr>
+        <th>Year</th>
+        <td>%asset_metadata_data^json_decode^index:year%</td>
+    </tr>
+    <tr>
+        <th>Safety</th>
+        <td>%asset_metadata_data^json_decode^index:safety%</td>
+    </tr>
+</table>
+
+
+<div id="editor_holder"></div>
+<button id="save">Submit (console.log)</button>
+
+<div id="json-data-%asset_assetid%">
+  %metadata-F_metadata_values%
+</div>
+
+<script>
+    var jsonData = document.getElementById('json-data-%asset_assetid%');
+    var jsonTextArea = jsonData.querySelector('textarea');
+    
+    //fix some matrix stuff first
+    jsonData.querySelector('input[type="checkbox"]').checked = false;
+    jsonTextArea.disabled = false;
+    
+      // Initialize the editor with a JSON schema
+      var editor = new JSONEditor(document.getElementById('editor_holder'),{
+        schema: {
+          type: "object",
+          title: "Car",
+          properties: {
+            make: {
+              type: "string",
+              enum: [
+                "Toyota",
+                "BMW",
+                "Honda",
+                "Ford",
+                "Chevy",
+                "VW"
+              ]
+            },
+            model: {
+              type: "string"
+            },
+            year: {
+              type: "integer",
+              enum: [
+                1995,1996,1997,1998,1999,
+                2000,2001,2002,2003,2004,
+                2005,2006,2007,2008,2009,
+                2010,2011,2012,2013,2014
+              ],
+              default: 2008
+            },
+            safety: {
+              type: "integer",
+              format: "rating",
+              maximum: "5",
+              exclusiveMaximum: false,
+              readonly: false
+            }
+          }
+        },
+        theme: 'bootstrap4'
+      });
+      
+      editor.setValue(%asset_metadata_data^json_decode%);
+      
+        editor.on('change',function() {
+          jsonTextArea.value = JSON.stringify(editor.getValue());
+        });
+
+      // Hook up the submit button to log to the console
+      document.getElementById('save').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Get the value from the editor
+            console.log(editor.getValue());
+            jsonTextArea.value = JSON.stringify(editor.getValue());
+      });
+    </script>
+
