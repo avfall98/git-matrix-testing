@@ -1,9 +1,10 @@
 <script runat="server">
     //print('<script>var editorValue = '+content;<\/script>');
     print(JSON.stringify(content));
+    print('<div id="editor_holder" data-content=\'{"make":"Toyota","model":"fdfsdfsd","year":2010,"safety":4}'></div>\');
 </script>
 
-<div id="editor_holder" data-content='{"make":"Toyota","model":"fdfsdfsd","year":2010,"safety":4}'></div>
+<!--div id="editor_holder" data-content='{"make":"Toyota","model":"fdfsdfsd","year":2010,"safety":4}'></div-->
 
 <script>
     var jsonData = document.getElementById('json-data');
