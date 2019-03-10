@@ -1,10 +1,6 @@
-<script runat="server">
-    //print('<script>var editorValue = '+content;<\/script>');
-    print(JSON.stringify(content));
-    print('<div id="editor_holder" data-content=\'{"make":"Toyota","model":"fdfsdfsd","year":2010,"safety":4}\'></div>');
-</script>
 
-<!--div id="editor_holder" data-content='{"make":"Toyota","model":"fdfsdfsd","year":2010,"safety":4}'></div-->
+
+<div id="editor_holder"></div>
 
 <script>
     var jsonData = document.getElementById('json-data');
@@ -62,7 +58,7 @@
 
     editor.on('change',function() {
         console.log(editor.getValue());
-        jsonTextArea.value = JSON.stringify(editor.getValue());
+        jsonTextArea.value = JSON.stringify(jsonTextArea.value);
     });
 
     /* Hook up the submit button to log to the console
