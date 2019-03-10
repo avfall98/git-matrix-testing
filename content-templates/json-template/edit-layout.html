@@ -10,7 +10,7 @@
     var jsonData = document.getElementById('json-data');
     var jsonTextArea = jsonData.querySelector('textarea');
     var editorHolder = document.getElementById('editor_holder');
-    var jsonContent = editorHolder.getAttribute('data-content');
+    var jsonContent = JSON.parse(editorHolder.getAttribute('data-content'));
     
     //fix some matrix stuff first
     jsonData.querySelector('input[type="checkbox"]').checked = false;
