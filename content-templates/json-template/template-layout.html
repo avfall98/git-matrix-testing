@@ -1,1 +1,32 @@
 
+
+<script runat="server">
+print('<script>console.log('+ JSON.stringify(asset) ');');
+print(JSON.stringify(asset));
+</script>
+
+<hr/>
+
+<script runat="server">
+print(asset.metadata.data.value);
+</script>
+
+
+<table>
+    <tr>
+        <th>Make</th>
+        <td>%asset_metadata_data^json_decode^index:make%</td>
+    </tr>
+    <tr>
+        <th>Model</th>
+        <td>%asset_metadata_data^json_decode^index:model%</td>
+    </tr>
+    <tr>
+        <th>Year</th>
+        <td>%asset_metadata_data^json_decode^index:year%</td>
+    </tr>
+    <tr>
+        <th>Safety</th>
+        <td>%asset_metadata_data^json_decode^index:safety%</td>
+    </tr>
+</table>
