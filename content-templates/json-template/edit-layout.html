@@ -9,8 +9,8 @@
     jsonData.querySelector('input[type="checkbox"]').checked = false;
     jsonTextArea.disabled = false;
     
-      // Initialize the editor with a JSON schema
-      var editor = new JSONEditor(document.getElementById('editor_holder'),{
+    // Initialize the editor with a JSON schema
+    var editor = new JSONEditor(document.getElementById('editor_holder'),{
         schema: {
           type: "object",
           title: "Car",
@@ -49,20 +49,21 @@
           }
         },
         theme: 'bootstrap4'
-      });
-      
-      editor.setValue(%asset_metadata_data^json_decode%);
-      
-        editor.on('change',function() {
-          jsonTextArea.value = JSON.stringify(editor.getValue());
-        });
+    });
 
-      // Hook up the submit button to log to the console
-      document.getElementById('save').addEventListener('click', function(e) {
-            e.preventDefault();
-            // Get the value from the editor
-            console.log(editor.getValue());
-            jsonTextArea.value = JSON.stringify(editor.getValue());
-      });
-    </script>
+    editor.setValue(%asset_metadata_data^json_decode%);
+
+    editor.on('change',function() {
+        console.log(editor.getValue());
+        jsonTextArea.value = JSON.stringify(editor.getValue());
+    });
+
+    /* Hook up the submit button to log to the console
+    document.getElementById('save').addEventListener('click', function(e) {
+        e.preventDefault();
+        // Get the value from the editor
+        console.log(editor.getValue());
+        jsonTextArea.value = JSON.stringify(editor.getValue());
+    });*/
+</script>
 
