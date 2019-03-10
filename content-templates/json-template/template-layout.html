@@ -5,14 +5,14 @@
     print('<script>console.log(' + JSON.stringify(asset) + ');<\/script>');
     
     //get content
-    var content = asset.metadata.data.value;
+    var content = JSON.parse(asset.metadata.data.value);
 
     //create template
     var template = '\
         <table>\
             <tr>\
                 <th>Make</th>\
-                <td>'+ content +'</td>\
+                <td>'+ content.make +'</td>\
             </tr>\
         </table>\
     ';
