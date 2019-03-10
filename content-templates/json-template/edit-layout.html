@@ -1,37 +1,8 @@
-[%asset_name%]
-[%globals_asset_name%]
-[%asset_metadata_data%]
-[%edit_asset_name%]
-
-<table>
-    <tr>
-        <th>Make</th>
-        <td>%asset_metadata_data^json_decode^index:make%</td>
-    </tr>
-    <tr>
-        <th>Model</th>
-        <td>%asset_metadata_data^json_decode^index:model%</td>
-    </tr>
-    <tr>
-        <th>Year</th>
-        <td>%asset_metadata_data^json_decode^index:year%</td>
-    </tr>
-    <tr>
-        <th>Safety</th>
-        <td>%asset_metadata_data^json_decode^index:safety%</td>
-    </tr>
-</table>
-
 
 <div id="editor_holder"></div>
-<button id="save">Submit (console.log)</button>
-
-<div id="json-data-%asset_assetid%">
-  %metadata-F_metadata_values%
-</div>
 
 <script>
-    var jsonData = document.getElementById('json-data-%asset_assetid%');
+    var jsonData = document.getElementById('json-data');
     var jsonTextArea = jsonData.querySelector('textarea');
     
     //fix some matrix stuff first
