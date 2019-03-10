@@ -58,7 +58,7 @@
 
     editor.on('change',function() {
         console.log(editor.getValue());
-        jsonTextArea.value = JSON.stringify(jsonTextArea.value);
+        jsonTextArea.value = editor.getValue();
     });
 
     /* Hook up the submit button to log to the console
