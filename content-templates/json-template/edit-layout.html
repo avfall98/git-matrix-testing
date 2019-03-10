@@ -54,7 +54,7 @@
         theme: 'bootstrap4'
     });
 
-    editor.setValue(jsonContent);
+    editor.setValue(jsonData.getAttribute('data-content'));
 
     editor.on('change',function() {
         console.log(editor.getValue());
