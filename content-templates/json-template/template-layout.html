@@ -1,15 +1,27 @@
 
 
 <script runat="server">
+    //print into browser for debugging
     print('<script>console.log(' + JSON.stringify(asset) + ');<\/script>');
-    print(JSON.stringify(asset));
+    
+    //get content
+    var content = asset.metadata.data.value;
+
+    //create template
+    var template = '\
+        <table>\
+            <tr>\
+                <th>Make</th>\
+                <td>'+ content.make +'</td>\
+            </tr>\
+        </table>\
+    ';
+
+    //print template
+    print(template);
+    
 </script>
 
-<hr/>
-
-<script runat="server">
-print(asset.metadata.data.value);
-</script>
 
 
 <table>
