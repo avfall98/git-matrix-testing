@@ -9,6 +9,8 @@
 <script>
     var jsonData = document.getElementById('json-data');
     var jsonTextArea = jsonData.querySelector('textarea');
+    var editorHolder = document.getElementById('editor_holder');
+    var jsonContent = editorHolder.getAttribute('data-content');
     
     //fix some matrix stuff first
     jsonData.querySelector('input[type="checkbox"]').checked = false;
@@ -56,7 +58,7 @@
         theme: 'bootstrap4'
     });
 
-    editor.setValue(editor.getAttribute('data-content'));
+    editor.setValue(jsonContent);
 
     editor.on('change',function() {
         console.log(editor.getValue());
