@@ -17,9 +17,6 @@
         schema: {
           type: "object",
           title: "Edit car details",
-          options: {
-            collapsed: true
-          },
           properties: {
             make: {
               type: "string",
@@ -56,7 +53,8 @@
         },
         theme: 'bootstrap4',
         disable_edit_json: true,
-        disable_properties: true
+        disable_properties: true,
+        disable_collapse: true
     });
 
     editor.setValue(jsonContent);
