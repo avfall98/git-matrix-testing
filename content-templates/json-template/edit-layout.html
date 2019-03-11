@@ -31,7 +31,8 @@
                 "Ford",
                 "Chevy",
                 "VW"
-              ]
+              ],
+                default: jsonContent.make
             },
             model: {
               type: "string"
@@ -69,7 +70,7 @@
     
     //only set the editor values if there are any stored
     if(Object.entries(jsonContent).length > 0){
-        editor.setValue(jsonContent);
+        //editor.setValue(jsonContent);
     }
     
     //add event listener to update the metadata textarea when there are editor changes
