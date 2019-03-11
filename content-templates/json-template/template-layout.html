@@ -37,7 +37,11 @@
 
 <!--@@ ################### Edit Layout ################### @@-->
 
-%globals_server_REQUEST_URI^contains:_edit:
+%begin_globals_server_REQUEST_URI^contains:_edit%
+yes
+%else_globals%
+no
+%end_globals%
 
 <button class="btn btn-sm btn-secondary" type="button" data-toggle="collapse" data-target="#editor-wrapper">Edit</button>
 
@@ -115,6 +119,6 @@
 
 <div style="margin-bottom: 20px;">&nbsp;</div>
 
-%
+
 
 
