@@ -16,8 +16,7 @@
     var editor = new JSONEditor(document.getElementById('editor_holder'),{
         schema: {
           type: "object",
-          title: "Edit car details",,
-          collapsed: true,
+          title: "Edit car details",
           properties: {
             make: {
               type: "string",
@@ -54,7 +53,8 @@
         },
         theme: 'bootstrap4',
         disable_edit_json: true,
-        disable_properties: true
+        disable_properties: true,
+        collapsed: true
     });
 
     editor.setValue(jsonContent);
