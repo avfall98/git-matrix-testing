@@ -60,9 +60,13 @@
         disable_properties: true,
         disable_collapse: true
     });
-
-    editor.setValue(jsonContent);
-
+    
+    //only set the editor values if there are any stored
+    if(Object.entries(jsonContent).length > 0){
+        editor.setValue(jsonContent);
+    }
+    
+    //add event listener to update the metadata textarea when there are editor changes
     editor.on('change',function() {
         console.log(editor.getValue());
         jsonTextArea.value = JSON.stringify(editor.getValue());
