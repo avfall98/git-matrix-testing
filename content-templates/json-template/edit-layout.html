@@ -54,19 +54,11 @@
         theme: 'bootstrap4'
     });
 
-    editor.setValue(JSON.parse(jsonData.getAttribute('data-content')));
+    editor.setValue(jsonContent);
 
     editor.on('change',function() {
         console.log(editor.getValue());
         jsonTextArea.value = JSON.stringify(editor.getValue());
     });
-
-    /* Hook up the submit button to log to the console
-    document.getElementById('save').addEventListener('click', function(e) {
-        e.preventDefault();
-        // Get the value from the editor
-        console.log(editor.getValue());
-        jsonTextArea.value = JSON.stringify(editor.getValue());
-    });*/
 </script>
 
