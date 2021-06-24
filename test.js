@@ -1,2 +1,2 @@
 print('Update from GIT');
-//new update 6
+//new update 7
